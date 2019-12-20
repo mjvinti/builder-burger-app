@@ -10,10 +10,13 @@ const controls = [
   { label: 'Meat', type: 'meat' }
 ];
 
-const BuildControls = (props) => (
+const BuildControls = props => (
   <div className={classes.BuildControls}>
+    <p>
+      Current Price: <strong>{props.price.toFixed(2)}</strong>
+    </p>
     {controls.map(ctrl => (
-      <BuildControl 
+      <BuildControl
         key={ctrl.label}
         label={ctrl.label}
         added={() => props.ingredientAdded(ctrl.type)}
